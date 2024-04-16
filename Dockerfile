@@ -38,7 +38,7 @@ RUN poetry lock --no-update && poetry install --no-cache && rm -rf /root/.cache/
 COPY . .
 
 # Test converting and cache models
-RUN poetry run python convert_single.py test.pdf test.md
+RUN poetry run python convert_single.py test.pdf test.md && rm test.md
 
 # The command to run the application
 ENV SHELL "/bin/bash"
